@@ -210,8 +210,8 @@ exports.addBook=async(req,res)=>{
     ];
     const session = await Stripe.checkout.sessions.create({
       payment_method_types: ["card"],
-      success_url: "http://localhost:5173/payment-success",
-      cancel_url: "http://localhost:5173/payment-error",
+      success_url: "https://bookstore-bibin-frontend.vercel.app/payment-success",
+      cancel_url: "https://bookstore-bibin-frontend.vercel.app/payment-error",
       line_items,
       mode: "payment",
     });
